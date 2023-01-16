@@ -1,0 +1,76 @@
+#menu{
+    background-color: rgb(230, 226, 226);
+    height: 100vh;
+    width: 11vw;
+    display: flex;
+    flex-direction: column;
+}
+#main-tasks{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 20%; 
+}
+.tasks{
+    background-color: rgb(216, 211, 211);
+    color: #513317;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 0px 20px 0px 20px;
+    padding: 5px 5px 5px 5px;
+    transition: 0.5s;
+}
+#home{
+    font-size: 27px;
+    font-weight: bold;
+    height: fit-content;
+    color: #513317; 
+    align-items: center;
+    display: flex;
+    height: fit-content;
+    margin: 10px 20px 0px 20px;
+    padding: 5px 5px 5px 5px;
+}
+.tasks p{
+    margin-left: 15px;
+}
+.tasks:hover{
+    background-color: #513317;
+    color: #bdac92;
+    cursor: pointer;
+}
+#user-projects{
+    height: 60%;
+    display: flex;
+}
+#projects-title{
+    font-size: 27px;
+    font-weight: bold;
+    width: fit-content;
+}
+#container-title{
+    color: #513317; 
+    align-items: center;
+    display: flex;
+   height: fit-content;
+    margin: 10px 20px 0px 20px;
+    padding: 5px 5px 5px 5px;
+}
+#add{
+    background-color: rgb(216, 211, 211);
+    box-sizing: border-box;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 10px;
+    margin-top: 2px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+#add:hover{
+    background-color: #513317;
+    color: rgb(216, 211, 211);
+    cursor: pointer;
+}
