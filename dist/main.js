@@ -7,6 +7,7 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/components/header/header.css":
@@ -15,7 +16,6 @@
   \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://todo/./src/components/header/header.css?");
 
 /***/ }),
@@ -26,7 +26,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://todo/./src/components/menu/menu.css?");
 
 /***/ }),
@@ -37,7 +36,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://todo/./src/pressets.css?");
 
 /***/ }),
@@ -48,7 +46,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _header_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header.css */ \"./src/components/header/header.css\");\n/* harmony import */ var _check_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./check.png */ \"./src/components/header/check.png\");\n\r\n\r\n\r\nfunction Heading(){\r\n    let headerElement = document.createElement('header')\r\n    headerElement.id = 'header'\r\n\r\n    let pageTitle = document.createElement('h2')\r\n    pageTitle.id = 'page-title'\r\n    pageTitle.innerText = 'ToDo App'\r\n\r\n    let checkmark = document.createElement('img')\r\n    checkmark.src = _check_png__WEBPACK_IMPORTED_MODULE_1__\r\n    checkmark.id = 'checkmark'\r\n\r\n    headerElement.appendChild(pageTitle)\r\n    headerElement.appendChild(checkmark)\r\n\r\n    return headerElement\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Heading);\n\n//# sourceURL=webpack://todo/./src/components/header/header.js?");
 
 /***/ }),
@@ -59,8 +56,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _tasks_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tasks.js */ \"./src/components/menu/tasks.js\");\n/* harmony import */ var _tasks_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_tasks_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _menu_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu.css */ \"./src/components/menu/menu.css\");\n\r\n\r\n\r\nfunction createMenu(){\r\n    let menuSection = document.createElement('section')\r\n    menuSection.id = 'menu'\r\n\r\n    \r\n\r\n   \r\n\r\n    return menuSection\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createMenu);\n\n//# sourceURL=webpack://todo/./src/components/menu/menu.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _tasks_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tasks.js */ \"./src/components/menu/tasks.js\");\n/* harmony import */ var _menu_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu.css */ \"./src/components/menu/menu.css\");\n\r\n\r\n\r\nfunction createMenu(){\r\n    let menuSection = document.createElement('section')\r\n    menuSection.id = 'menu'\r\n\r\n    //Creating home text\r\n\r\n    let homeContainer = document.createElement('div')\r\n    homeContainer.id = 'home'\r\n    let homeText = document.createElement('p')\r\n    homeText.innerText = 'Home'\r\n\r\n    homeContainer.appendChild(homeText)\r\n    menuSection.appendChild(homeContainer)\r\n\r\n    //Creating default tasks\r\n\r\n    let mainTasksContainer = document.createElement('div')\r\n    mainTasksContainer.id = 'main-tasks'\r\n    let allTasks = new _tasks_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('All')\r\n    mainTasksContainer.appendChild(allTasks)\r\n\r\n    let importantTasks = new _tasks_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Important')\r\n    mainTasksContainer.appendChild(importantTasks)\r\n\r\n    let completedTasks = new _tasks_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Completed')\r\n    mainTasksContainer.appendChild(completedTasks)\r\n\r\n    menuSection.appendChild(mainTasksContainer)\r\n\r\n    //Creating personal tasks text\r\n\r\n    let projectsContainer = document.createElement('div')\r\n    projectsContainer.id = 'container-title'\r\n    let projectsTitle = document.createElement('div')\r\n    projectsTitle.id = 'projects-title'\r\n    //add button\r\n    let divAdd = document.createElement('div')\r\n    divAdd.innerText = 'add'\r\n    divAdd.id = 'add'\r\n    //\r\n    let projectsText = document.createElement('p')\r\n    projectsText.innerText = 'Projects'\r\n\r\n\r\n    projectsTitle.appendChild(projectsText)\r\n    projectsContainer.appendChild(projectsTitle)\r\n    projectsContainer.appendChild(divAdd)\r\n    menuSection.appendChild(projectsContainer)\r\n\r\n    return menuSection\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createMenu);\n\n//# sourceURL=webpack://todo/./src/components/menu/menu.js?");
 
 /***/ }),
 
@@ -68,9 +64,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /*!**************************************!*\
   !*** ./src/components/menu/tasks.js ***!
   \**************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("function createTasks(text){\r\n    let div = document.createElement('div')\r\n    div.classList.add = 'tasks'\r\n\r\n    let divText = document.createElement('p')\r\n    divText.innerText = `${text}`\r\n\r\n    div.appendChild(divText)\r\n\r\n    return div\r\n}\n\n//# sourceURL=webpack://todo/./src/components/menu/tasks.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction createTasks(text){\r\n    let div = document.createElement('div')\r\n    div.classList.add(\"tasks\");\r\n\r\n    let divText = document.createElement('p')\r\n    divText.innerText = `${text}`\r\n\r\n    div.appendChild(divText)\r\n\r\n    return div\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createTasks);\n\n//# sourceURL=webpack://todo/./src/components/menu/tasks.js?");
 
 /***/ }),
 
@@ -80,7 +76,6 @@ eval("function createTasks(text){\r\n    let div = document.createElement('div')
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _pressets_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pressets.css */ \"./src/pressets.css\");\n/* harmony import */ var _components_header_header_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/header/header.js */ \"./src/components/header/header.js\");\n/* harmony import */ var _components_menu_menu_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/menu/menu.js */ \"./src/components/menu/menu.js\");\n\r\n\r\n\r\n\r\nloadPage()\r\n\r\nfunction loadPage(){\r\n    let header = new _components_header_header_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"]()\r\n    document.getElementById('content').appendChild(header)\r\n\r\n    let menu = new _components_menu_menu_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"]()\r\n    document.getElementById('content').appendChild(menu)\r\n    \r\n}\n\n//# sourceURL=webpack://todo/./src/index.js?");
 
 /***/ }),
@@ -91,7 +86,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _pre
   \*****************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 eval("module.exports = __webpack_require__.p + \"5e95abe0870091376d0e.png\";\n\n//# sourceURL=webpack://todo/./src/components/header/check.png?");
 
 /***/ })
@@ -123,18 +117,6 @@ eval("module.exports = __webpack_require__.p + \"5e95abe0870091376d0e.png\";\n\n
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports

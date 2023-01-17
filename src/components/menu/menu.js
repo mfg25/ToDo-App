@@ -1,5 +1,7 @@
 import Task from './tasks.js'
 import './menu.css'
+import PopUp from './add/popUp.js'
+import AddButton from './add/addButton.js'
 
 function createMenu(){
     let menuSection = document.createElement('section')
@@ -36,10 +38,8 @@ function createMenu(){
     projectsContainer.id = 'container-title'
     let projectsTitle = document.createElement('div')
     projectsTitle.id = 'projects-title'
-    //add button
-    let divAdd = document.createElement('div')
-    divAdd.innerText = 'add'
-    divAdd.id = 'add'
+    //add button and popUp
+    let divAdd = new AddButton()
     //
     let projectsText = document.createElement('p')
     projectsText.innerText = 'Projects'
@@ -49,6 +49,7 @@ function createMenu(){
     projectsContainer.appendChild(projectsTitle)
     projectsContainer.appendChild(divAdd)
     menuSection.appendChild(projectsContainer)
+
 
     return menuSection
 }

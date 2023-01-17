@@ -1,0 +1,94 @@
+.modal-container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:2000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+}
+.modal-container.mostrar{
+    display:flex;
+}
+.form{
+    position: relative;
+    color: #3a230f;
+    height: 20vh;
+    width: 25vw;
+    background-color: rgb(230, 226, 226);
+    border: 5px solid #644324;
+    box-sizing: border-box;
+    padding: 20px 40px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.mostrar .form{
+    animation-name: popUp;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes popUp{
+    0%{
+        opacity:0;
+        transform: translateY(-60px);
+    }
+    100%{
+        opacity: 1;
+    }
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+input{
+    padding: 2px;
+    margin-bottom: 10px;
+    border: 2px solid #644324;
+    background-color: rgb(230, 226, 226);
+    border-radius: 3px;
+    color: #644324;
+}
+#submitButton{
+    font-size: 15px;
+    font-weight: 500;
+    position: relative;
+    cursor: pointer;
+    width: 70px;
+    height:30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #d8cbc0;
+    border:2px solid #3a230f;
+    color: #3a230f;
+    border-radius: 3px;
+    transition: 0.6s;
+}
+#submitButton:hover{
+    background-color: #3a230f;
+    color: #d8cbc0;
+}
+#form-title{
+    position: relative;
+    font-size: 30px;
+    bottom: 3%;
+}
+.label{
+    font-size: 20px;
+}
+#close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    color: #3a230f;
+    font-weight: bold;
+    border-radius: 50%;
+    background-color: #d8cbc0;
+    cursor: pointer;
+}
