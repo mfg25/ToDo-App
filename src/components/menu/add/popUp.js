@@ -1,4 +1,6 @@
 import './popUp.css'
+import createTasks from '../tasks'
+import addNewProject from './addNewProject'
 
 function createPopUp(){
     let modalContainer = document.createElement('div')
@@ -14,11 +16,23 @@ function createPopUp(){
         id="projectName"
         placeholder="Project name"
         required
-        maxlength="100s"
+        maxlength="20s"
       />
       <button type="submit" id="submitButton" value="Submit">Submit</button>
     </form>
   </div>`
+
+    //get input value
+    let submitButton = modalContainer.firstChild.children[2].children[2]
+    submitButton.addEventListener("click", (e) =>{
+        e.preventDefault()
+        let name = document.getElementById('projectName')
+        let nameValue = name.value
+        if(nameValue.length != 0){
+            modalContainer.classList.remove('mostrar')
+            addNewProject(nameValue)
+        }
+    });
 
 
   return modalContainer

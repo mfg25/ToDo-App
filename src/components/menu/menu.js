@@ -38,17 +38,23 @@ function createMenu(){
     projectsContainer.id = 'container-title'
     let projectsTitle = document.createElement('div')
     projectsTitle.id = 'projects-title'
+    menuSection.appendChild(projectsContainer)
+
+    //personal tasks container
+    let personalTasksContainer = document.createElement('div')
+    personalTasksContainer.id = 'personal-tasks'
+    menuSection.appendChild(personalTasksContainer)
+
     //add button and popUp
     let divAdd = new AddButton()
-    //
     let projectsText = document.createElement('p')
     projectsText.innerText = 'Projects'
-
 
     projectsTitle.appendChild(projectsText)
     projectsContainer.appendChild(projectsTitle)
     projectsContainer.appendChild(divAdd)
-    menuSection.appendChild(projectsContainer)
+
+   
 
 
     return menuSection
