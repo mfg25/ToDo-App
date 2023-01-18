@@ -16,7 +16,7 @@ function createButton(){
     closeButton.addEventListener("click", () =>{
         popUp.classList.remove('mostrar')
     });
-
+    
     return divAdd
 }
 

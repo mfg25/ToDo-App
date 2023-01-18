@@ -1,4 +1,4 @@
-import loadContent from './mainContent/loadMainContent.js'
+import loadContent from '../mainContent/loadMainContent.js'
 
 function createTasks(text){
     let div = document.createElement('div')
@@ -17,7 +17,8 @@ function createTasks(text){
             document.getElementById('personal-tasks').childNodes[i].classList.remove('active');
         }
         div.classList.add('active')
-        loadContent(div.innerText)
+        let projectTodos = []
+        loadContent(div.innerText, projectTodos)
     })
 
     return div

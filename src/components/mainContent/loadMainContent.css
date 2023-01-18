@@ -1,0 +1,44 @@
+#main-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#title-add-container{
+    width: 100%;
+    height: 9vh;
+    display: flex;
+    justify-content: space-around;
+}
+#type-selected-container{
+    letter-spacing: 2px;
+    border-radius: 15px;
+    font-size: 30px;
+    color: rgb(216, 211, 211);
+    background-color: #644324;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 0px 7px 0px;
+    margin-top: 25px;
+}
+#addTodo{
+    margin-top: 25px;
+    border-radius: 15px;
+    background-color: rgb(216, 211, 211);
+    width: 150px;
+    border: none;
+    color: #644324;
+    overflow: hidden;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.6s;
+}
+#addTodo:hover{
+    background-color: #513317;
+    color: rgb(216, 211, 211);
+    cursor: pointer;
+}
