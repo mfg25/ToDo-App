@@ -6,6 +6,7 @@ function addNewProject(projectName){
     let newProject = new createTasks(projectName)
     personalTasksContainer.appendChild(newProject)
 
+    
 }
 
 export default addNewProject

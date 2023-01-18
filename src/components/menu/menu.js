@@ -21,6 +21,7 @@ function createMenu(){
 
     let mainTasksContainer = document.createElement('div')
     mainTasksContainer.id = 'main-tasks'
+    
     let allTasks = new Task('All')
     mainTasksContainer.appendChild(allTasks)
 

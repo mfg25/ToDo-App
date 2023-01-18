@@ -12,10 +12,10 @@ function createButton(){
     });
 
     let closeButton = popUp.firstChild.children[0];
+
     closeButton.addEventListener("click", () =>{
         popUp.classList.remove('mostrar')
     });
-
 
     return divAdd
 }

@@ -48,8 +48,12 @@
 }
 .tasks:hover{
     background-color: #513317;
-    color: #bdac92;
+    color: rgb(230, 226, 226);
     cursor: pointer;
+}
+.tasks.active{
+    background-color: #513317;
+    color: rgb(230, 226, 226);
 }
 #user-projects{
     height: 60%;
