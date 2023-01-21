@@ -1,11 +1,10 @@
 import './popUp.css'
 import createTasks from '../tasks'
-import addNewProject from './addNewProject'
+
 
 function createPopUp(){
     let modalContainer = document.createElement('div')
     modalContainer.classList.add('modal-container')
-    modalContainer.id = 'modalAddButton'
     modalContainer.innerHTML = `<div class="form">
     <button id="close">X</button>
     <h2 id="form-title">New project</h2>
@@ -30,7 +29,7 @@ function createPopUp(){
         let nameValue = name.value
         if(nameValue.length != 0){
             modalContainer.classList.remove('mostrar')
-            addNewProject(nameValue)
+            createTasks(nameValue)
         }
     });
 

@@ -1,4 +1,4 @@
-import loadContent from '../mainContent/loadMainContent.js'
+import loadMainContent from '../mainContent/loadMainContent.js';
 
 function createTasks(text){
     let div = document.createElement('div')
@@ -7,6 +7,11 @@ function createTasks(text){
     let divText = document.createElement('p')
     divText.innerText = `${text}`
     div.appendChild(divText)
+
+    if(text != 'Important' && text != 'Completed' && text != 'All'){
+        let personalTasksContainer = document.getElementById('personal-tasks')
+        personalTasksContainer.appendChild(div)
+    }
 
     //active class 
     div.addEventListener('click', () =>{
@@ -17,9 +22,9 @@ function createTasks(text){
             document.getElementById('personal-tasks').childNodes[i].classList.remove('active');
         }
         div.classList.add('active')
-        let projectTodos = []
-        loadContent(div.innerText, projectTodos)
+        loadMainContent(text)
     })
+
 
     return div
 }

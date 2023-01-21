@@ -14,10 +14,10 @@
 .modal-container.mostrar{
     display:flex;
 }
-.form{
+.todo-form{
     position: relative;
     color: #3a230f;
-    height: 200px;
+    height: 350px;
     width: 500px;
     background-color: rgb(230, 226, 226);
     border: 5px solid #644324;
@@ -25,9 +25,9 @@
     padding: 20px 40px 20px 40px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
-.mostrar .form{
+.mostrar .todo-form{
     animation-name: popUp;
     animation-duration: 1s;
     animation-fill-mode: forwards;
@@ -72,12 +72,12 @@ input{
     background-color: #3a230f;
     color: #d8cbc0;
 }
-#form-title{
+#todo-form-title{
     position: relative;
-    font-size: 30px;
+    font-size: 35px;
     bottom: 3%;
 }
-.label{
+label{
     font-size: 20px;
 }
 #close{
@@ -91,4 +91,11 @@ input{
     border-radius: 50%;
     background-color: #d8cbc0;
     cursor: pointer;
+}
+#important-checkbox{
+    position: relative;
+    top: 3%;
+    left: 1%;
+    width: 15px;
+    color: black;
 }

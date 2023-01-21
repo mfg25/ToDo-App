@@ -11,6 +11,9 @@
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     overflow-x: hidden;
 }
+main{
+    display: flex;
+}
 /*!************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/header/header.css ***!
   \************************************************************************************/
@@ -30,6 +33,201 @@
     padding: 7px 0px 0px 25px;
     height: 60px;
 }
+/*!**************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/mainContent/loadMainContent.css ***!
+  \**************************************************************************************************/
+#main-content{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+#title-add-container{
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#type-selected-container{
+    letter-spacing: 2px;
+    border-radius: 15px;
+    font-size: 30px;
+    color: rgb(216, 211, 211);
+    background-color: #644324;
+    width: 95%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 0px 7px 0px;
+    margin-top: 25px;
+}
+#addTodo{
+    margin-top: 25px;
+    border-radius: 15px;
+    background-color: rgb(216, 211, 211);
+    width: 180px;
+    border: none;
+    color: #644324;
+    overflow: hidden;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.6s;
+    height: 82px;
+}
+#addTodo:hover{
+    background-color: #644324;
+    color: rgb(216, 211, 211);
+    cursor: pointer;
+}
+.ToDo-container{
+    font-size: 18px;
+    height: 30px;
+    width: 90%;
+    background-color: rgb(216, 211, 211);
+    border-radius: 10px;
+    padding: 7px 10px 7px 10px;
+    margin-top: 20px;
+    color: #513317;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 900;
+    align-items: center;
+}
+.ToDo-container p{
+    position: relative;
+
+}
+#all-todos-container{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#date-delete-checked-container{
+    display: flex;
+    align-items: center;
+}
+#date-delete-checked-container input{
+    width: 15px;
+    height: 15px;
+}
+#date-delete-checked-container *{
+    margin: 0px 4px 0px 4px;
+}
+#delete{
+    width: 16px;
+    height: 16px;
+}
+/*!******************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/mainContent/todoInput/todoInput.css ***!
+  \******************************************************************************************************/
+.modal-container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:2000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+}
+.modal-container.mostrar{
+    display:flex;
+}
+.todo-form{
+    position: relative;
+    color: #3a230f;
+    height: 350px;
+    width: 500px;
+    background-color: rgb(230, 226, 226);
+    border: 5px solid #644324;
+    box-sizing: border-box;
+    padding: 20px 40px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.mostrar .todo-form{
+    animation-name: popUp;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes popUp{
+    0%{
+        opacity:0;
+        transform: translateY(-60px);
+    }
+    100%{
+        opacity: 1;
+    }
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+input{
+    padding: 2px;
+    margin-bottom: 10px;
+    border: 2px solid #644324;
+    background-color: rgb(230, 226, 226);
+    border-radius: 3px;
+    color: #644324;
+}
+#submitButton{
+    font-size: 15px;
+    font-weight: 500;
+    position: relative;
+    cursor: pointer;
+    width: 70px;
+    height:30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #d8cbc0;
+    border:2px solid #3a230f;
+    color: #3a230f;
+    border-radius: 3px;
+    transition: 0.6s;
+}
+#submitButton:hover{
+    background-color: #3a230f;
+    color: #d8cbc0;
+}
+#todo-form-title{
+    position: relative;
+    font-size: 35px;
+    bottom: 3%;
+}
+label{
+    font-size: 20px;
+}
+#close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    color: #3a230f;
+    font-weight: bold;
+    border-radius: 50%;
+    background-color: #d8cbc0;
+    cursor: pointer;
+}
+#important-checkbox{
+    position: relative;
+    top: 3%;
+    left: 1%;
+    width: 15px;
+    color: black;
+}
+
 /*!********************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/menu/menu.css ***!
   \********************************************************************************/
@@ -40,11 +238,18 @@
     display: flex;
     flex-direction: column;
 }
+
 #main-tasks{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     height: 20%; 
+}
+#personal-tasks{
+    display: flex;
+    flex-direction: column;
+    
+    height: 50%; 
 }
 .tasks{
     background-color: rgb(216, 211, 211);
@@ -56,6 +261,9 @@
     margin: 0px 20px 0px 20px;
     padding: 5px 5px 5px 5px;
     transition: 0.5s;
+}
+#personal-tasks .tasks{
+    margin-top: 15px;
 }
 #home{
     font-size: 27px;
@@ -73,8 +281,12 @@
 }
 .tasks:hover{
     background-color: #513317;
-    color: #bdac92;
+    color: rgb(230, 226, 226);
     cursor: pointer;
+}
+.tasks.active{
+    background-color: #513317;
+    color: rgb(230, 226, 226);
 }
 #user-projects{
     height: 60%;
@@ -107,5 +319,102 @@
 #add:hover{
     background-color: #513317;
     color: rgb(216, 211, 211);
+    cursor: pointer;
+}
+/*!*************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/menu/add/popUp.css ***!
+  \*************************************************************************************/
+.modal-container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:2000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+}
+.modal-container.mostrar{
+    display:flex;
+}
+.form{
+    position: relative;
+    color: #3a230f;
+    height: 200px;
+    width: 500px;
+    background-color: rgb(230, 226, 226);
+    border: 5px solid #644324;
+    box-sizing: border-box;
+    padding: 20px 40px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.mostrar .form{
+    animation-name: popUp;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes popUp{
+    0%{
+        opacity:0;
+        transform: translateY(-60px);
+    }
+    100%{
+        opacity: 1;
+    }
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+input{
+    padding: 2px;
+    margin-bottom: 10px;
+    border: 2px solid #644324;
+    background-color: rgb(230, 226, 226);
+    border-radius: 3px;
+    color: #644324;
+}
+#submitButton{
+    font-size: 15px;
+    font-weight: 500;
+    position: relative;
+    cursor: pointer;
+    width: 70px;
+    height:30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #d8cbc0;
+    border:2px solid #3a230f;
+    color: #3a230f;
+    border-radius: 3px;
+    transition: 0.6s;
+}
+#submitButton:hover{
+    background-color: #3a230f;
+    color: #d8cbc0;
+}
+#form-title{
+    position: relative;
+    font-size: 30px;
+    bottom: 3%;
+}
+.label{
+    font-size: 20px;
+}
+#close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    color: #3a230f;
+    font-weight: bold;
+    border-radius: 50%;
+    background-color: #d8cbc0;
     cursor: pointer;
 }
