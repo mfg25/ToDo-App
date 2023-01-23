@@ -1,6 +1,6 @@
 import loadMainContent from '../mainContent/loadMainContent.js';
 
-function createTasks(text){
+function createTasks(text, selectedContainer){
     let div = document.createElement('div')
     div.classList.add("tasks");
 
@@ -8,10 +8,10 @@ function createTasks(text){
     divText.innerText = `${text}`
     div.appendChild(divText)
 
-    if(text != 'Important' && text != 'Completed' && text != 'All'){
-        let personalTasksContainer = document.getElementById('personal-tasks')
-        personalTasksContainer.appendChild(div)
-    }
+    
+        
+    selectedContainer.appendChild(div)
+
 
     //active class 
     div.addEventListener('click', () =>{
@@ -26,7 +26,6 @@ function createTasks(text){
     })
 
 
-    return div
 }
 
 export default createTasks

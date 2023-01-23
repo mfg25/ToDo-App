@@ -1,4 +1,5 @@
 import './loadMainContent.css'
+import loadTodos from './loadTodos'
 import addTodoPopUp from './todoInput/todoInput.js'
 
 import trash from './trash.png'
@@ -31,26 +32,14 @@ function loadMainContent(contentName){
     
     for(let obj in usuarios){
         let item = JSON.parse(localStorage.getItem('usuarios'))
-        if(item[obj].contentName == currentPage){
-            let toDoContainer = document.createElement('div')
-            toDoContainer.classList.add('ToDo-container')
-            let titleTodo = document.createElement('p')
-            titleTodo.innerHTML = `${item[obj].titleValue}`
-            let dateDeleteCheckedDiv = document.createElement('div')
-            dateDeleteCheckedDiv.id = 'date-delete-checked-container'
-            let dateText = document.createElement('p')
-            dateText.innerHTML = `${item[obj].dateValue}`
-            let checkboxFinished = document.createElement('input')
-            checkboxFinished.type = 'checkbox'
-            let trashCanImg = document.createElement('img')
-            trashCanImg.id = 'delete'
-            trashCanImg.src = trash
-            dateDeleteCheckedDiv.appendChild(dateText)
-            dateDeleteCheckedDiv.appendChild(checkboxFinished)
-            dateDeleteCheckedDiv.appendChild(trashCanImg)
-            toDoContainer.appendChild(titleTodo)
-            toDoContainer.appendChild(dateDeleteCheckedDiv)
-            allTodosContainer.appendChild(toDoContainer)   
+        if(currentPage == 'All'){
+            loadTodos(allTodosContainer, item, obj)
+        }
+        else if(currentPage == 'Important' && item[obj].importantValue){
+            loadTodos(allTodosContainer, item, obj)
+        }
+        else if(item[obj].contentName == currentPage){
+            loadTodos(allTodosContainer, item, obj)
         }
     }
 
@@ -58,8 +47,6 @@ function loadMainContent(contentName){
     let popUp = new addTodoPopUp()
     document.querySelector('body').appendChild(popUp)
     let addTodoButton = document.getElementById('addTodo')
-    console.log(addTodoButton)
-    console.log(popUp)
     addTodoButton.addEventListener('click', () => {
         popUp.classList.add('mostrar')
     })
@@ -92,8 +79,6 @@ function loadMainContent(contentName){
         loadMainContent(contentName)
         
     })
-
-  
 
 }
 

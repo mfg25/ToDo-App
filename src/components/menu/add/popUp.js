@@ -1,8 +1,9 @@
 import './popUp.css'
 import createTasks from '../tasks'
+import saveTask from '../savedTasks'
 
 
-function createPopUp(){
+function createPopUp(personalTasksContainer){
     let modalContainer = document.createElement('div')
     modalContainer.classList.add('modal-container')
     modalContainer.innerHTML = `<div class="form">
@@ -29,7 +30,8 @@ function createPopUp(){
         let nameValue = name.value
         if(nameValue.length != 0){
             modalContainer.classList.remove('mostrar')
-            createTasks(nameValue)
+            saveTask(nameValue)
+            createTasks(nameValue, personalTasksContainer)
         }
     });
 

@@ -57,6 +57,7 @@
     justify-content: space-between;
     font-weight: 900;
     align-items: center;
+    overflow: hidden;
 }
 .ToDo-container p{
     position: relative;
@@ -84,4 +85,7 @@
 #delete{
     width: 16px;
     height: 16px;
+}
+.ToDo-container img{
+    cursor: pointer;
 }

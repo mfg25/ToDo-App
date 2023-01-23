@@ -2,6 +2,7 @@ import Task from './tasks.js'
 import './menu.css'
 import PopUp from './add/popUp.js'
 import AddButton from './add/addButton.js'
+import { showSavedTasks } from './savedTasks.js'
 
 function createMenu(){
     let menuSection = document.createElement('section')
@@ -22,14 +23,12 @@ function createMenu(){
     let mainTasksContainer = document.createElement('div')
     mainTasksContainer.id = 'main-tasks'
     
-    let allTasks = new Task('All')
-    mainTasksContainer.appendChild(allTasks)
+    let allTasks = new Task('All', mainTasksContainer)
 
-    let importantTasks = new Task('Important')
-    mainTasksContainer.appendChild(importantTasks)
+    let importantTasks = new Task('Important', mainTasksContainer)
 
-    let completedTasks = new Task('Completed')
-    mainTasksContainer.appendChild(completedTasks)
+    let completedTasks = new Task('Completed', mainTasksContainer)
+    
 
     menuSection.appendChild(mainTasksContainer)
 
@@ -47,7 +46,7 @@ function createMenu(){
     menuSection.appendChild(personalTasksContainer)
 
     //add button and popUp
-    let divAdd = new AddButton()
+    let divAdd = new AddButton(personalTasksContainer)
     let projectsText = document.createElement('p')
     projectsText.innerText = 'Projects'
 
@@ -55,7 +54,7 @@ function createMenu(){
     projectsContainer.appendChild(projectsTitle)
     projectsContainer.appendChild(divAdd)
 
-   
+    showSavedTasks(personalTasksContainer)
 
 
     return menuSection
