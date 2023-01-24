@@ -1,8 +1,8 @@
 import './loadMainContent.css'
 import loadTodos from './loadTodos'
 import addTodoPopUp from './todoInput/todoInput.js'
-
 import trash from './trash.png'
+
 function loadMainContent(contentName){
 
     let usuarios = new Array()  
@@ -40,6 +40,8 @@ function loadMainContent(contentName){
         }
         else if(item[obj].contentName == currentPage){
             loadTodos(allTodosContainer, item, obj)
+        }else if(currentPage == 'Completed' && item[obj].taskCompleted){
+            loadTodos(allTodosContainer, item, obj)
         }
     }
 
@@ -71,7 +73,7 @@ function loadMainContent(contentName){
         if(localStorage.hasOwnProperty("usuarios")){
             usuarios = JSON.parse(localStorage.getItem("usuarios"))
         }
-        usuarios.push({titleValue, dateValue, importantValue, contentName})
+        usuarios.push({titleValue, dateValue, importantValue, contentName, taskCompleted: false})
 
         localStorage.setItem("usuarios", JSON.stringify(usuarios))
         popUp.classList.remove('mostrar')

@@ -7,8 +7,6 @@ function createTasks(text, selectedContainer){
     let divText = document.createElement('p')
     divText.innerText = `${text}`
     div.appendChild(divText)
-
-    
         
     selectedContainer.appendChild(div)
 

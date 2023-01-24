@@ -95,6 +95,7 @@ main{
     justify-content: space-between;
     font-weight: 900;
     align-items: center;
+    overflow: hidden;
 }
 .ToDo-container p{
     position: relative;
@@ -122,6 +123,9 @@ main{
 #delete{
     width: 16px;
     height: 16px;
+}
+.ToDo-container img{
+    cursor: pointer;
 }
 /*!******************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/mainContent/todoInput/todoInput.css ***!

@@ -1,5 +1,6 @@
-import trash from './trash.png'
 
+import trash from './trash.png'
+import {removeTask, toggleCompleted} from '../menu/savedTasks.js'
 export default function loadTodos(allTodosContainer, item, obj){
     let toDoContainer = document.createElement('div')
     toDoContainer.classList.add('ToDo-container')
@@ -11,6 +12,10 @@ export default function loadTodos(allTodosContainer, item, obj){
     dateText.innerHTML = `${item[obj].dateValue}`
     let checkboxFinished = document.createElement('input')
     checkboxFinished.type = 'checkbox'
+    checkboxFinished.id = 'checkbox'
+    if(item[obj].taskCompleted){
+        checkboxFinished.setAttribute('checked', 'checked')
+    }
     let trashCanImg = document.createElement('img')
     trashCanImg.id = 'delete'
     trashCanImg.src = trash
@@ -20,4 +25,17 @@ export default function loadTodos(allTodosContainer, item, obj){
     toDoContainer.appendChild(titleTodo)
     toDoContainer.appendChild(dateDeleteCheckedDiv)
     allTodosContainer.appendChild(toDoContainer)   
+
+    trashCanImg.addEventListener('click', ()=>{
+        trashCanImg.parentElement.parentElement.remove()
+        removeTask(trashCanImg.parentElement.parentElement.firstChild.innerHTML, trashCanImg.parentElement.firstChild.innerHTML)
+    })
+    checkboxFinished.addEventListener('click', () =>{
+        toggleCompleted(checkboxFinished.parentElement.parentElement.firstChild.innerHTML, checkboxFinished.parentElement.firstChild.innerHTML)
+        if(checkboxFinished.classList.contains('completedTask')){
+            checkboxFinished.classList.remove('completedTask')
+        }else{
+            checkboxFinished.classList.add('completedTask')
+        }
+    })
 }

@@ -15,6 +15,18 @@ export default function saveTask(taskName){
     return savedTasks
 }
 
+export function removeTask(taskName, taskDate){
+    let usuarios = new Array
+
+    usuarios = JSON.parse(localStorage.getItem("usuarios"))
+
+    usuarios = usuarios.filter(function(item) {
+        return item.titleValue !== taskName && item.dateValue !== taskDate;
+    });
+    localStorage.setItem("usuarios", JSON.stringify(usuarios))
+    
+}
+
 export function showSavedTasks(personalTasksContainer){
     let savedTasks = new Array()
     if(localStorage.hasOwnProperty("savedTasks")){
@@ -23,4 +35,22 @@ export function showSavedTasks(personalTasksContainer){
     for(let obj in savedTasks){
         createTasks(savedTasks[obj], personalTasksContainer)
     }
+}
+
+export function toggleCompleted(taskName, taskDate){
+    let usuarios = new Array
+
+    usuarios = JSON.parse(localStorage.getItem("usuarios"))
+    
+    usuarios.forEach(element => {
+        if(element.titleValue == taskName && element.dateValue == taskDate){
+            if(element.taskCompleted == true){
+                element.taskCompleted = false
+            }else{
+                element.taskCompleted = true
+            }
+        }
+    });
+
+    localStorage.setItem("usuarios", JSON.stringify(usuarios))
 }
