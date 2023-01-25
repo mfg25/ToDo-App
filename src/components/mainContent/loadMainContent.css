@@ -15,7 +15,7 @@
     border-radius: 15px;
     font-size: 30px;
     color: rgb(216, 211, 211);
-    background-color: #644324;
+    background-color: #382a1d;
     width: 95%;
     height: 70px;
     display: flex;
@@ -30,7 +30,7 @@
     background-color: rgb(216, 211, 211);
     width: 180px;
     border: none;
-    color: #644324;
+    color: #382a1d;
     overflow: hidden;
     font-size: 50px;
     display: flex;
@@ -40,7 +40,7 @@
     height: 82px;
 }
 #addTodo:hover{
-    background-color: #644324;
+    background-color: #382a1d;
     color: rgb(216, 211, 211);
     cursor: pointer;
 }
@@ -52,12 +52,22 @@
     border-radius: 10px;
     padding: 7px 10px 7px 10px;
     margin-top: 20px;
-    color: #513317;
+    color: #382a1d;
     display: flex;
     justify-content: space-between;
     font-weight: 900;
     align-items: center;
     overflow: hidden;
+    transition: 0.5s;
+}
+.ToDo-container:hover{
+    width: 91%;
+    cursor: pointer;
+    background-color: #382a1d;
+    color: rgb(216, 211, 211); 
+}
+.ToDo-container:hover #delete{
+    filter: brightness(0) invert(1);
 }
 .ToDo-container p{
     position: relative;
@@ -71,6 +81,7 @@
     justify-content: center;
     align-items: center;
 }
+
 #date-delete-checked-container{
     display: flex;
     align-items: center;
@@ -84,6 +95,7 @@
 }
 #delete{
     width: 16px;
+    transition: 0.5s;
     height: 16px;
 }
 .ToDo-container img{

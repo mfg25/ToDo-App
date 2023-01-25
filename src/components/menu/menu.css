@@ -1,7 +1,7 @@
 #menu{
     background-color: rgb(230, 226, 226);
     height: 100vh;
-    width: 11vw;
+    width: 14vw;
     display: flex;
     flex-direction: column;
 }
@@ -20,7 +20,7 @@
 }
 .tasks{
     background-color: rgb(216, 211, 211);
-    color: #513317;
+    color: #382a1d;
     font-size: large;
     font-weight: bold;
     border-radius: 5px;
@@ -28,6 +28,7 @@
     margin: 0px 20px 0px 20px;
     padding: 5px 5px 5px 5px;
     transition: 0.5s;
+    overflow: hidden;
 }
 #personal-tasks .tasks{
     margin-top: 15px;
@@ -36,10 +37,10 @@
     font-size: 27px;
     font-weight: bold;
     height: fit-content;
-    color: #513317; 
+    color: #382a1d; 
     align-items: center;
     display: flex;
-    height: fit-content;
+    
     margin: 10px 20px 0px 20px;
     padding: 5px 5px 5px 5px;
 }
@@ -47,12 +48,12 @@
     margin-left: 15px;
 }
 .tasks:hover{
-    background-color: #513317;
+    background-color: #382a1d;
     color: rgb(230, 226, 226);
     cursor: pointer;
 }
 .tasks.active{
-    background-color: #513317;
+    background-color: #382a1d;
     color: rgb(230, 226, 226);
 }
 #user-projects{
@@ -65,7 +66,7 @@
     width: fit-content;
 }
 #container-title{
-    color: #513317; 
+    color: #382a1d; 
     align-items: center;
     display: flex;
    height: fit-content;
@@ -84,7 +85,68 @@
     transition: 0.5s;
 }
 #add:hover{
-    background-color: #513317;
+    background-color: #382a1d;
     color: rgb(216, 211, 211);
     cursor: pointer;
 }
+@media (max-width: 700px) {
+    #menu{
+        width: 40vw;
+    }
+    #home{
+        font-size: 15px;
+        width: 70%;
+        margin: 10px;
+    }
+    #add{
+        font-size: 15px;
+        margin-top: 5px;
+        margin-right: 5px;
+    }
+    #container-title{
+        display: flex;
+        flex-direction: column;
+    }
+    #projects-title{
+        margin: 10px;
+        font-size: 10px;
+    }
+    .tasks{
+        margin: 10px;
+    }
+    .tasks p{
+        font-size: 15px;
+        margin-left: 0px;
+    }
+}
+@media (max-width: 1600px) {
+    #menu{
+        width: 20vw;
+    }
+    #home{
+        font-size: 25px;
+        width: 70%;
+        margin: 10px;
+    }
+    #add{
+        font-size: 20px;
+        margin-top: 5px;
+        margin-right: 5px;
+    }
+    #container-title{
+        display: flex;
+        
+    }
+    #projects-title{
+        margin: 0px;
+        font-size: 25px;
+    }
+    .tasks{
+        margin: 10px;
+    }
+    .tasks p{
+        font-size: 15px;
+        margin-left: 0px;
+    }
+}
+

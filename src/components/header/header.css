@@ -1,5 +1,5 @@
 #header{
-    background-color: #644324;
+    background-color: #382a1d;
     width: 100vw;
     height: 8vh;
     display: flex;
@@ -13,4 +13,12 @@
 #checkmark{
     padding: 7px 0px 0px 25px;
     height: 60px;
+}
+@media (max-width: 700px) {
+    #header{
+        height: 9vh;
+    }
+    #page-title{
+        font-size: 40px;
+    }
 }

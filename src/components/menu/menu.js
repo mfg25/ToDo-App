@@ -18,6 +18,8 @@ function createMenu(){
     homeContainer.appendChild(homeText)
     menuSection.appendChild(homeContainer)
 
+    
+
     //Creating default tasks
 
     let mainTasksContainer = document.createElement('div')

@@ -8,7 +8,8 @@
 *{
     padding: 0;
     margin: 0;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:"SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+    font-weight: 300;
     overflow-x: hidden;
 }
 main{
@@ -18,7 +19,7 @@ main{
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/header/header.css ***!
   \************************************************************************************/
 #header{
-    background-color: #644324;
+    background-color: #382a1d;
     width: 100vw;
     height: 8vh;
     display: flex;
@@ -32,6 +33,14 @@ main{
 #checkmark{
     padding: 7px 0px 0px 25px;
     height: 60px;
+}
+@media (max-width: 700px) {
+    #header{
+        height: 9vh;
+    }
+    #page-title{
+        font-size: 40px;
+    }
 }
 /*!**************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/mainContent/loadMainContent.css ***!
@@ -53,7 +62,7 @@ main{
     border-radius: 15px;
     font-size: 30px;
     color: rgb(216, 211, 211);
-    background-color: #644324;
+    background-color: #382a1d;
     width: 95%;
     height: 70px;
     display: flex;
@@ -68,7 +77,7 @@ main{
     background-color: rgb(216, 211, 211);
     width: 180px;
     border: none;
-    color: #644324;
+    color: #382a1d;
     overflow: hidden;
     font-size: 50px;
     display: flex;
@@ -78,7 +87,7 @@ main{
     height: 82px;
 }
 #addTodo:hover{
-    background-color: #644324;
+    background-color: #382a1d;
     color: rgb(216, 211, 211);
     cursor: pointer;
 }
@@ -90,12 +99,22 @@ main{
     border-radius: 10px;
     padding: 7px 10px 7px 10px;
     margin-top: 20px;
-    color: #513317;
+    color: #382a1d;
     display: flex;
     justify-content: space-between;
     font-weight: 900;
     align-items: center;
     overflow: hidden;
+    transition: 0.5s;
+}
+.ToDo-container:hover{
+    width: 91%;
+    cursor: pointer;
+    background-color: #382a1d;
+    color: rgb(216, 211, 211); 
+}
+.ToDo-container:hover #delete{
+    filter: brightness(0) invert(1);
 }
 .ToDo-container p{
     position: relative;
@@ -109,6 +128,7 @@ main{
     justify-content: center;
     align-items: center;
 }
+
 #date-delete-checked-container{
     display: flex;
     align-items: center;
@@ -122,11 +142,13 @@ main{
 }
 #delete{
     width: 16px;
+    transition: 0.5s;
     height: 16px;
 }
 .ToDo-container img{
     cursor: pointer;
 }
+
 /*!******************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/mainContent/todoInput/todoInput.css ***!
   \******************************************************************************************************/
@@ -152,7 +174,7 @@ main{
     height: 350px;
     width: 500px;
     background-color: rgb(230, 226, 226);
-    border: 5px solid #644324;
+    border: 5px solid #382a1d;
     box-sizing: border-box;
     padding: 20px 40px 20px 40px;
     display: flex;
@@ -161,7 +183,7 @@ main{
 }
 .mostrar .todo-form{
     animation-name: popUp;
-    animation-duration: 1s;
+    animation-duration: 0.6s;
     animation-fill-mode: forwards;
 }
 @keyframes popUp{
@@ -180,10 +202,10 @@ form{
 input{
     padding: 2px;
     margin-bottom: 10px;
-    border: 2px solid #644324;
+    border: 2px solid #382a1d;
     background-color: rgb(230, 226, 226);
     border-radius: 3px;
-    color: #644324;
+    color: #382a1d;
 }
 #submitButton{
     font-size: 15px;
@@ -195,13 +217,13 @@ input{
     left: 50%;
     transform: translateX(-50%);
     background-color: #d8cbc0;
-    border:2px solid #3a230f;
-    color: #3a230f;
+    border:2px solid #382a1d;
+    color: #382a1d;
     border-radius: 3px;
     transition: 0.6s;
 }
 #submitButton:hover{
-    background-color: #3a230f;
+    background-color: #382a1d;
     color: #d8cbc0;
 }
 #todo-form-title{
@@ -238,7 +260,7 @@ label{
 #menu{
     background-color: rgb(230, 226, 226);
     height: 100vh;
-    width: 11vw;
+    width: 14vw;
     display: flex;
     flex-direction: column;
 }
@@ -257,7 +279,7 @@ label{
 }
 .tasks{
     background-color: rgb(216, 211, 211);
-    color: #513317;
+    color: #382a1d;
     font-size: large;
     font-weight: bold;
     border-radius: 5px;
@@ -265,6 +287,7 @@ label{
     margin: 0px 20px 0px 20px;
     padding: 5px 5px 5px 5px;
     transition: 0.5s;
+    overflow: hidden;
 }
 #personal-tasks .tasks{
     margin-top: 15px;
@@ -273,10 +296,10 @@ label{
     font-size: 27px;
     font-weight: bold;
     height: fit-content;
-    color: #513317; 
+    color: #382a1d; 
     align-items: center;
     display: flex;
-    height: fit-content;
+    
     margin: 10px 20px 0px 20px;
     padding: 5px 5px 5px 5px;
 }
@@ -284,12 +307,12 @@ label{
     margin-left: 15px;
 }
 .tasks:hover{
-    background-color: #513317;
+    background-color: #382a1d;
     color: rgb(230, 226, 226);
     cursor: pointer;
 }
 .tasks.active{
-    background-color: #513317;
+    background-color: #382a1d;
     color: rgb(230, 226, 226);
 }
 #user-projects{
@@ -302,7 +325,7 @@ label{
     width: fit-content;
 }
 #container-title{
-    color: #513317; 
+    color: #382a1d; 
     align-items: center;
     display: flex;
    height: fit-content;
@@ -321,10 +344,72 @@ label{
     transition: 0.5s;
 }
 #add:hover{
-    background-color: #513317;
+    background-color: #382a1d;
     color: rgb(216, 211, 211);
     cursor: pointer;
 }
+@media (max-width: 700px) {
+    #menu{
+        width: 40vw;
+    }
+    #home{
+        font-size: 15px;
+        width: 70%;
+        margin: 10px;
+    }
+    #add{
+        font-size: 15px;
+        margin-top: 5px;
+        margin-right: 5px;
+    }
+    #container-title{
+        display: flex;
+        flex-direction: column;
+    }
+    #projects-title{
+        margin: 10px;
+        font-size: 10px;
+    }
+    .tasks{
+        margin: 10px;
+    }
+    .tasks p{
+        font-size: 15px;
+        margin-left: 0px;
+    }
+}
+@media (max-width: 1600px) {
+    #menu{
+        width: 20vw;
+    }
+    #home{
+        font-size: 25px;
+        width: 70%;
+        margin: 10px;
+    }
+    #add{
+        font-size: 20px;
+        margin-top: 5px;
+        margin-right: 5px;
+    }
+    #container-title{
+        display: flex;
+        
+    }
+    #projects-title{
+        margin: 0px;
+        font-size: 25px;
+    }
+    .tasks{
+        margin: 10px;
+    }
+    .tasks p{
+        font-size: 15px;
+        margin-left: 0px;
+    }
+}
+
+
 /*!*************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/menu/add/popUp.css ***!
   \*************************************************************************************/
@@ -350,7 +435,7 @@ label{
     height: 200px;
     width: 500px;
     background-color: rgb(230, 226, 226);
-    border: 5px solid #644324;
+    border: 5px solid #382a1d;
     box-sizing: border-box;
     padding: 20px 40px 20px 40px;
     display: flex;
@@ -359,7 +444,7 @@ label{
 }
 .mostrar .form{
     animation-name: popUp;
-    animation-duration: 1s;
+    animation-duration: 0.6s;
     animation-fill-mode: forwards;
 }
 @keyframes popUp{
@@ -378,10 +463,10 @@ form{
 input{
     padding: 2px;
     margin-bottom: 10px;
-    border: 2px solid #644324;
+    border: 2px solid #382a1d;
     background-color: rgb(230, 226, 226);
     border-radius: 3px;
-    color: #644324;
+    color: #382a1d;
 }
 #submitButton{
     font-size: 15px;
@@ -393,13 +478,13 @@ input{
     left: 50%;
     transform: translateX(-50%);
     background-color: #d8cbc0;
-    border:2px solid #3a230f;
-    color: #3a230f;
+    border:2px solid #382a1d;
+    color: #382a1d;
     border-radius: 3px;
     transition: 0.6s;
 }
 #submitButton:hover{
-    background-color: #3a230f;
+    background-color: #382a1d;
     color: #d8cbc0;
 }
 #form-title{

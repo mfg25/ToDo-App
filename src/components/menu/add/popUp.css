@@ -20,7 +20,7 @@
     height: 200px;
     width: 500px;
     background-color: rgb(230, 226, 226);
-    border: 5px solid #644324;
+    border: 5px solid #382a1d;
     box-sizing: border-box;
     padding: 20px 40px 20px 40px;
     display: flex;
@@ -29,7 +29,7 @@
 }
 .mostrar .form{
     animation-name: popUp;
-    animation-duration: 1s;
+    animation-duration: 0.6s;
     animation-fill-mode: forwards;
 }
 @keyframes popUp{
@@ -48,10 +48,10 @@ form{
 input{
     padding: 2px;
     margin-bottom: 10px;
-    border: 2px solid #644324;
+    border: 2px solid #382a1d;
     background-color: rgb(230, 226, 226);
     border-radius: 3px;
-    color: #644324;
+    color: #382a1d;
 }
 #submitButton{
     font-size: 15px;
@@ -63,13 +63,13 @@ input{
     left: 50%;
     transform: translateX(-50%);
     background-color: #d8cbc0;
-    border:2px solid #3a230f;
-    color: #3a230f;
+    border:2px solid #382a1d;
+    color: #382a1d;
     border-radius: 3px;
     transition: 0.6s;
 }
 #submitButton:hover{
-    background-color: #3a230f;
+    background-color: #382a1d;
     color: #d8cbc0;
 }
 #form-title{
