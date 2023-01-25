@@ -1,7 +1,7 @@
 #menu{
     background-color: rgb(230, 226, 226);
     height: 100vh;
-    width: 13vw;
+    width: 14vw;
     display: flex;
     flex-direction: column;
 }
@@ -15,6 +15,7 @@
 #personal-tasks{
     display: flex;
     flex-direction: column;
+    
     height: 50%; 
 }
 .tasks{
@@ -88,10 +89,78 @@
     color: rgb(216, 211, 211);
     cursor: pointer;
 }
+#button-
 #nav-container{
- 
     height: 100%;
 }
-#button-menu-slider{
-    width: 20px;
+@media (max-width: 900px) {
+    #menu{
+        display: none;
+    }
+    #menu.active{
+        display: flex;
+        width: 50vw;
+    }
+    #home{
+        width: 70%;
+        margin: 10px;
+    }
+    #home p{
+        font-size: smaller;
+    }
+    #add{
+        font-size: 15px;
+        margin-top: 5px;
+        margin-right: 5px;
+    }
+    #container-title{
+        display: flex;
+        flex-direction: column;
+    }
+    #projects-title{
+        margin: 10px;
+        font-size: 10px;
+    }
+    #projects-title p{
+        font-size:smaller
+    }
+    .tasks{
+        margin: 10px;
+    }
+    .tasks p{
+        font-size: 15px;
+        margin-left: 0px;
+    }
 }
+@media (max-width: 1600px) {
+    #menu{
+        width: 20vw;
+    }
+    #home{
+        font-size: 25px;
+        width: 70%;
+        margin: 10px;
+    }
+    #add{
+        font-size: 20px;
+        margin-top: 5px;
+        margin-right: 5px;
+    }
+    #container-title{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    #projects-title{
+        margin: 0px;
+        font-size: 25px;
+    }
+    .tasks{
+        margin: 10px;
+    }
+    .tasks p{
+        font-size: 15px;
+        margin-left: 0px;
+    }
+}
+

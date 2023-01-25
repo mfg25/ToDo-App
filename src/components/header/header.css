@@ -5,6 +5,37 @@
     display: flex;
     align-items: center;
 }
+#burguer-button-container{
+    
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 5%;
+}
+#burguer-button{
+    display: none;
+    width: 30px;
+    height: 4px;
+    border-radius: 5px;
+    background-color: rgb(230, 226, 226);
+}
+#burguer-button::before, #burguer-button::after{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    border-radius: 5px;
+    background-color:rgb(230, 226, 226);
+}
+#burguer-button::before{
+    transform: translateY(-10px);
+}
+#burguer-button::after{
+    transform: translateY(10px);
+}
 #page-title{
     font-size: 47px;
     padding-left: 3vw;
@@ -14,11 +45,21 @@
     padding: 7px 0px 0px 25px;
     height: 60px;
 }
-@media (max-width: 700px) {
+@media (max-width: 900px) {
     #header{
         height: 9vh;
     }
+    #header{
+        justify-content: center;
+    }
     #page-title{
-        font-size: 40px;
+        font-size: 45px;
+    }
+    #checkmark{
+        height: 45px;
+        padding-left: 15px;
+    }
+    #burguer-button{
+        display: block;
     }
 }
