@@ -8,6 +8,14 @@ function createMenu(){
     let menuSection = document.createElement('section')
     menuSection.id = 'menu'
 
+    //menu slider
+
+    let buttonSlider = document.createElement('button')
+    buttonSlider.innerHTML = 'Menu'
+    buttonSlider.id = 'button-menu-slider'
+    menuSection.appendChild(buttonSlider)
+    
+
     //Creating home text
 
     let homeContainer = document.createElement('div')
@@ -18,7 +26,6 @@ function createMenu(){
     homeContainer.appendChild(homeText)
     menuSection.appendChild(homeContainer)
 
-    
 
     //Creating default tasks
 
@@ -56,10 +63,29 @@ function createMenu(){
     projectsContainer.appendChild(projectsTitle)
     projectsContainer.appendChild(divAdd)
 
+    let navContainer = document.createElement('div')
+    navContainer.id = 'nav-container'
+    navContainer.appendChild(homeContainer)
+    navContainer.appendChild(mainTasksContainer)
+    navContainer.appendChild(projectsContainer)
+    navContainer.appendChild(personalTasksContainer)
+
+    menuSection.appendChild(navContainer)
     showSavedTasks(personalTasksContainer)
+
+    //button slider eventlistener click
+
+    buttonSlider.addEventListener('click', ()=>{
+        navContainer.classList.toggle('active')
+    })
 
 
     return menuSection
+}
+
+function toggleMenu(){
+    let navContainer = document.getElementById('nav-container')
+    navContainer.classList.add('active')
 }
 
 export default createMenu
