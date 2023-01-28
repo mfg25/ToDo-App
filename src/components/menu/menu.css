@@ -29,6 +29,19 @@
     padding: 5px 5px 5px 5px;
     transition: 0.5s;
     overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+#remove-button{
+    font-size: 13px;
+    font-weight: bold;
+    margin-right: 10px;
+    visibility: hidden;
+}
+#remove-button.show-button{
+    visibility: visible;
 }
 #personal-tasks .tasks{
     margin-top: 15px;
@@ -125,11 +138,14 @@
         font-size:smaller
     }
     .tasks{
-        margin: 10px;
+        
+        display: flex;
+        flex-direction: row;
+        
     }
     .tasks p{
-        font-size: 15px;
-        margin-left: 0px;
+        width: 20px;
+       
     }
 }
 @media (max-width: 1600px) {

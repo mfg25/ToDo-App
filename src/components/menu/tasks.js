@@ -1,4 +1,5 @@
 import loadMainContent from '../mainContent/loadMainContent.js';
+import { removeProject } from './savedTasks.js';
 
 function createTasks(text, selectedContainer){
     let div = document.createElement('div')
@@ -7,9 +8,25 @@ function createTasks(text, selectedContainer){
     let divText = document.createElement('p')
     divText.innerText = `${text}`
     div.appendChild(divText)
-        
-    selectedContainer.appendChild(div)
 
+    //remove project button
+    if(text != 'All' && text != 'Important' && text != 'Completed'){
+        let removeButton = document.createElement('p')
+        removeButton.innerText = 'X'
+        div.appendChild(removeButton)
+        removeButton.id = 'remove-button'
+        div.addEventListener('mouseover', (e)=>{
+            removeButton.classList.add('show-button')
+        })
+        div.addEventListener('mouseout', (e)=>{
+            removeButton.classList.remove('show-button')
+        })
+        removeButton.addEventListener('click', (e)=>{
+            e.stopPropagation();
+            removeProject(div ,removeButton.parentElement.firstChild.innerHTML)
+        })
+    }
+    selectedContainer.appendChild(div)
 
     //active class 
     div.addEventListener('click', () =>{

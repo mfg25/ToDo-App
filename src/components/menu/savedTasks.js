@@ -38,7 +38,7 @@ export function showSavedTasks(personalTasksContainer){
 }
 
 export function toggleCompleted(taskName, taskDate){
-    let usuarios = new Array
+    let usuarios = new Array()
 
     usuarios = JSON.parse(localStorage.getItem("usuarios"))
     
@@ -53,4 +53,21 @@ export function toggleCompleted(taskName, taskDate){
     });
 
     localStorage.setItem("usuarios", JSON.stringify(usuarios))
+}
+
+export function removeProject(projectDiv, projectName){
+    let savedTasks = new Array()
+    savedTasks = JSON.parse(localStorage.getItem("savedTasks"))
+    console.log(projectName)
+    savedTasks.forEach(element => {
+        if(element == projectName){
+            projectDiv.remove()
+
+        }
+    });
+    savedTasks = savedTasks.filter(function(item) {
+        return item != projectName;
+    });
+    localStorage.setItem("savedTasks", JSON.stringify(savedTasks))
+
 }

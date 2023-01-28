@@ -68,7 +68,6 @@ function createMenu(){
     //
     showSavedTasks(personalTasksContainer)
 
-    
     return menuSection
 }
 
