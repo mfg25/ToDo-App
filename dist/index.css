@@ -21,7 +21,7 @@ main{
 #header{
     background-color: #382a1d;
     width: 100vw;
-    height: 8vh;
+    height: 10vh;
     display: flex;
     align-items: center;
 }
@@ -83,6 +83,7 @@ main{
         display: block;
     }
 }
+
 /*!**************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/mainContent/loadMainContent.css ***!
   \**************************************************************************************************/
