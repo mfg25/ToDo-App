@@ -86,6 +86,10 @@
     display: flex;
     align-items: center;
 }
+.late{
+    color: red;
+}
+
 #date-delete-checked-container input{
     width: 15px;
     height: 15px;

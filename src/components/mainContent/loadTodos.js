@@ -10,6 +10,11 @@ export default function loadTodos(allTodosContainer, item, obj){
     dateDeleteCheckedDiv.id = 'date-delete-checked-container'
     let dateText = document.createElement('p')
     dateText.innerHTML = `${item[obj].dateValue}`
+    let taskDateTime = new Date(item[obj].dateValue).getTime();
+    console.log(new Date(item[obj].dateValue))
+    if(taskDateTime < Date.now()){
+        dateText.classList.add('late')
+    }
     let checkboxFinished = document.createElement('input')
     checkboxFinished.type = 'checkbox'
     checkboxFinished.id = 'checkbox'

@@ -16,14 +16,14 @@ export default function saveTask(taskName){
 }
 
 export function removeTask(taskName, taskDate){
-    let usuarios = new Array
+    let toDos = new Array
 
-    usuarios = JSON.parse(localStorage.getItem("usuarios"))
+    toDos = JSON.parse(localStorage.getItem("toDos"))
 
-    usuarios = usuarios.filter(function(item) {
+    toDos = toDos.filter(function(item) {
         return item.titleValue !== taskName && item.dateValue !== taskDate;
     });
-    localStorage.setItem("usuarios", JSON.stringify(usuarios))
+    localStorage.setItem("toDos", JSON.stringify(toDos))
     
 }
 
@@ -38,11 +38,11 @@ export function showSavedTasks(personalTasksContainer){
 }
 
 export function toggleCompleted(taskName, taskDate){
-    let usuarios = new Array()
+    let toDos = new Array()
 
-    usuarios = JSON.parse(localStorage.getItem("usuarios"))
+    toDos = JSON.parse(localStorage.getItem("toDos"))
     
-    usuarios.forEach(element => {
+    toDos.forEach(element => {
         if(element.titleValue == taskName && element.dateValue == taskDate){
             if(element.taskCompleted == true){
                 element.taskCompleted = false
@@ -52,7 +52,7 @@ export function toggleCompleted(taskName, taskDate){
         }
     });
 
-    localStorage.setItem("usuarios", JSON.stringify(usuarios))
+    localStorage.setItem("toDos", JSON.stringify(toDos))
 }
 
 export function removeProject(projectDiv, projectName){

@@ -5,12 +5,12 @@ import trash from './trash.png'
 
 function loadMainContent(contentName){
 
-    let usuarios = new Array()  
+    let toDos = new Array()  
     if(document.getElementById('modalAddButton')){
         document.getElementById('modalAddButton').remove()
     }
-    if(localStorage.hasOwnProperty("usuarios")){
-        usuarios = JSON.parse(localStorage.getItem("usuarios"))
+    if(localStorage.hasOwnProperty("toDos")){
+        toDos = JSON.parse(localStorage.getItem("toDos"))
     }
     if(contentName == 'All' ||contentName == 'Important' || contentName == 'Completed'){
         document.getElementById('main-content').innerHTML = `
@@ -30,8 +30,8 @@ function loadMainContent(contentName){
     document.getElementById('title-add-container').appendChild(allTodosContainer)
     let currentPage = contentName
     
-    for(let obj in usuarios){
-        let item = JSON.parse(localStorage.getItem('usuarios'))
+    for(let obj in toDos){
+        let item = JSON.parse(localStorage.getItem('toDos'))
         if(currentPage == 'All'){
             loadTodos(allTodosContainer, item, obj)
         }
@@ -65,17 +65,15 @@ function loadMainContent(contentName){
         let titleValue = document.getElementById('todoTitle').value
         
         let dateValue = document.getElementById('date').value
-
+        dateValue = dateValue.replace(/-/g, '/')
         let importantValue = document.getElementById('important-checkbox').checked
 
-        
-
-        if(localStorage.hasOwnProperty("usuarios")){
-            usuarios = JSON.parse(localStorage.getItem("usuarios"))
+        if(localStorage.hasOwnProperty("toDos")){
+            toDos = JSON.parse(localStorage.getItem("toDos"))
         }
-        usuarios.push({titleValue, dateValue, importantValue, contentName, taskCompleted: false})
+        toDos.push({titleValue, dateValue, importantValue, contentName, taskCompleted: false})
 
-        localStorage.setItem("usuarios", JSON.stringify(usuarios))
+        localStorage.setItem("toDos", JSON.stringify(toDos))
         popUp.classList.remove('mostrar')
         popUp.remove()
         loadMainContent(contentName)
