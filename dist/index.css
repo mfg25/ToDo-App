@@ -175,6 +175,10 @@ main{
     display: flex;
     align-items: center;
 }
+.late{
+    color: red;
+}
+
 #date-delete-checked-container input{
     width: 15px;
     height: 15px;
@@ -336,6 +340,7 @@ label{
     
 }
 #remove-button{
+    width: 10px;
     font-size: 13px;
     font-weight: bold;
     margin-right: 10px;
@@ -375,6 +380,7 @@ label{
     display: flex;
 }
 #projects-title{
+    width: 100%;
     font-size: 27px;
     font-weight: bold;
     width: fit-content;
@@ -384,8 +390,8 @@ label{
     align-items: center;
     display: flex;
    height: fit-content;
-    margin: 10px 20px 0px 20px;
-    padding: 5px 5px 5px 5px;
+    margin: 5px 15px 0px 15px;
+    padding: 5px;
 }
 #add{
     background-color: rgb(216, 211, 211);
@@ -439,13 +445,11 @@ label{
         font-size:smaller
     }
     .tasks{
-        
         display: flex;
         flex-direction: row;
-        
     }
     .tasks p{
-        width: 20px;
+        width: 100%;
        
     }
 }
